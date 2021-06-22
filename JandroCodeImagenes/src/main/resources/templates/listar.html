@@ -2,12 +2,7 @@
 <html>
 <head th:replace="Layouts/base"></head>
 
-
-
-
-
 <body>
-
 <div class container mt-5>
 	<div th:each="usuario : ${usuarios}">
 		<div class="row justify-content-center">
@@ -28,19 +23,18 @@
 	<!-- 	https://cdnjs.com/libraries/font-awesome -->
     <!-- 	https://fontawesome.com/v5.15/icons?d=gallery&p=2 -->
 	<!--    https://fontawesome.com/v5.15/icons/envelope?style=regular -->
-							
 						</div>
-						
 					</div>
 				</div>	
 			</div>
 		</div>
 	
 	</div>
-	<a th:href="@{/}"><button class="btn btn-primary mt-5">&laquo;Volver</button></a>
+	<div class="row justify-content-center">
+	<nav th:replace="layouts/paginador.html :: paginador"></nav>
 	
-
+	<a th:href="@{/}"><button class="btn btn-primary mt-5">&laquo;Volver</button></a>
+	</div>
 </div>
-
 </body>
 </html>
