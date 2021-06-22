@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="Layouts/base"></head>
+
+
+
+
+
+<body>
+
+<div class container mt-5>
+	<div th:each="usuario : ${usuarios}">
+		<div class="row justify-content-center">
+			<div class="card mb-3" style="max-width: 350px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img class="img-fluid" th:src="@{'/uploads/'+${usuario.foto}}"
+						     th:alt="${usuario.foto}"/>
+					</div>
+					<div class=col-md-8>
+					    <div class="card-body">
+							<h3 class="card-title" th:text="${usuario.nombre}"></h3>
+							<p class="card-text" th:text="${usuario.apellidos}"></p>
+							<p class="card-text">
+								<i class="far fa-envelope"></i>
+								<small class="text-muted" th:text="${usuario.email}"></small>
+							</p>
+	<!-- 	https://cdnjs.com/libraries/font-awesome -->
+    <!-- 	https://fontawesome.com/v5.15/icons?d=gallery&p=2 -->
+	<!--    https://fontawesome.com/v5.15/icons/envelope?style=regular -->
+							
+						</div>
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+	
+	</div>
+	<a th:href="@{/}"><button class="btn btn-primary mt-5">&laquo;Volver</button></a>
+	
+
+</div>
+
+</body>
+</html>
